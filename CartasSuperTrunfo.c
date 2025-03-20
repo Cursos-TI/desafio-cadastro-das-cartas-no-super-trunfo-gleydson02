@@ -45,6 +45,7 @@ void cadastrarCarta (Carta *c) {
 
     printf("Digite o número de pontos turísticos: ");
     scanf("%d", c->pontosTuristicos);
+}
 
       // Exibição dos Dados das Cartas:
 
