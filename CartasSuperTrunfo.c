@@ -49,12 +49,12 @@ void cadastrarCarta (Carta *c) {
       // Exibição dos Dados das Cartas:
 
       void exibirCarta (Carta c) {
-        printf("\n--- Dados da Cidade %s (%s) ---\n", c.nomeCidade);
-        printf("Código: m%s\n, c.codigo");
-        printf("População: %d\n, c.populacao");
-        printf("Área: %.2f km²zn, c.area");
-        printf ("PIB: %2f Bilhões\n");
-        printf("Pontos Turísticos: %dzn, c.pontosTuristicos");
+        printf("\n--- Dados da Cidade %s  ---\n", c.nomeCidade);
+        printf("Código: m%s\n", c.codigo);
+        printf("População: %d\n", &c.populacao);
+        printf("Área: %.2f km²\n", c.area);
+        printf ("PIB: %2f Bilhões\n", c.pib);
+        printf("Pontos Turísticos: %d\n", &c.pontosTuristicos);
       }
 
     int main() {
@@ -81,3 +81,4 @@ void cadastrarCarta (Carta *c) {
     
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
