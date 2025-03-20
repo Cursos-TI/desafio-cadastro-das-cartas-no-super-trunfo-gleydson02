@@ -26,25 +26,25 @@ typedef struct {
 
 void cadastrarCarta (Carta *c) {
 
-    printf("Cadastro da Carta 1:\n");
+    printf("Cadastro a Carta:\n ");
     
-    printf("Digite o código da carta): ");
+    printf("Digite o código da carta: ");
     scanf("%s", c->codigo);
 
-    printf("Digite o Nome da Cidade): ");
-    scanf("%s", c->nomeCidade);
+    printf("Digite o Nome da Cidade: ");
+    scanf(" %s", c->nomeCidade);
 
     printf("Digite a população: ");
-    scanf("%d", c->populacao);
+    scanf(" %d", &c->populacao);
 
     printf("Digite a área(km²): ");
-    scanf("%f", c->area);
+    scanf("%f", &c->area);
 
     printf("Digite o PIB (em bilhões): ");
-    scanf("%f", c->pib);
+    scanf("%f", &c->pib);
 
     printf("Digite o número de pontos turísticos: ");
-    scanf("%d", c->pontosTuristicos);
+    scanf("%d", &c->pontosTuristicos);
 }
 
       // Exibição dos Dados das Cartas:
@@ -52,10 +52,10 @@ void cadastrarCarta (Carta *c) {
       void exibirCarta (Carta c) {
         printf("\n--- Dados da Cidade %s  ---\n", c.nomeCidade);
         printf("Código: m%s\n", c.codigo);
-        printf("População: %d\n", &c.populacao);
+        printf("População: %d\n", c.populacao);
         printf("Área: %.2f km²\n", c.area);
         printf ("PIB: %2f Bilhões\n", c.pib);
-        printf("Pontos Turísticos: %d\n", &c.pontosTuristicos);
+        printf("Pontos Turísticos: %d\n", c.pontosTuristicos);
       }
 
     int main() {
