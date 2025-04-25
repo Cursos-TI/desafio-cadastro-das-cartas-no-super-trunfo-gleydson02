@@ -30,7 +30,7 @@ void cadastrarCarta (Carta *c) {
     scanf("%s", c->nomeCidade);
 
     printf("Digite o código da carta (ex: A01): ");
-    scanf("%s", &c->codigo);
+    scanf("%s", c->codigo);
 
     printf("Digite a população: ");
     scanf("%lu", &c->populacao);
@@ -131,6 +131,10 @@ void exibirCarta(Carta c) {
 
         float valor1b = obterValorAtributo(c1, atributo2);
         float valor2b = obterValorAtributo(c2, atributo2);
+
+         // Soma dos atributos
+    float somaCarta1 = valor1a + valor1b;
+    float somaCarta2 = valor2a + valor2b;
     
         printf("\n--- Comparação das cartas ---\n");
     
@@ -142,14 +146,13 @@ void exibirCarta(Carta c) {
      printf("%s: %.2f vs %.2f => %s\n", nomeDoAtributo(atributo2), valor1b, valor2b,
      valor1b > valor2b ? "Carta 1 vence" : "Carta 2 vence");
 
-     // Soma dos atributos
-    float soma1 = valor1a + valor1b;
-    float soma2 = valor2a + valor2b;
+     printf("\nSoma dos atributos para a Carta 1: %.2f\n", somaCarta1);
+     printf("Soma dos atributos para a Carta 2: %.2f\n", somaCarta2);
 
-      // Verificação do vencedor
-      if (soma1 > soma2) {
+          // Verificação do vencedor
+      if (somaCarta1 > somaCarta2) {
        printf("\nCarta 1 vence a rodada!\n");
-   } else if (soma1 < soma2) {
+   } else if (somaCarta1 < somaCarta2) {
        printf("\nCarta 2 vence a rodada!\n");
    } else {
        printf("\nEmpate!\n");
@@ -173,7 +176,9 @@ void exibirCarta(Carta c) {
           exibirCarta(carta2);
 
           //escolha dos atributos
+          printf("Escolher atributo da 1 carta\n");
           int atributo1 = escolherAtributo(0);
+          printf("escolher atributo da 2 carta\n");
           int atributo2 = escolherAtributo(atributo1);
 
          //comparar cartas
